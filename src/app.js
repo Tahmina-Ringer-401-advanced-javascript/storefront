@@ -1,17 +1,18 @@
 import React from 'react';
-import Header from './components/header';
-import Footer from './components/footer';
-import initialState from './store/productStore';  
-// import Categories from './components/categories';
-import ProductsComp from './components/productsComp';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
+import Categories from './components/storefront/categories';
+import ProductsComp from './components/storefront/productsComp';
+
 
 
 function App() {
   return (
     <div className="App">
       <Header /> 
-      <Footer />
+      <Categories />
       <ProductsComp /> 
+      <Footer />
     </div>
   );
 }

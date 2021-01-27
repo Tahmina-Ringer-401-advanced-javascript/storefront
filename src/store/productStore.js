@@ -1,35 +1,76 @@
-import React from 'react';
 
-let initialState = {
+
+const initialState = {
+  categories: [
+    { name: 'electronics', displayName: 'Elecronics' },
+    { name: 'food', displayName: 'Food' },
+    { name: 'clothing', displayName: 'Clothing' },
+  ],
   products: [
-    {_id:1, category: 'Electronics', name: 'TV', description: 'LG', price:'379', itemCount:0},
-    {_id:2, category: 'Electronics', name: 'Xbox', description: '360', price:'429', itemCount:0},
-    {_id:3, category: 'Electronics', name: 'Iphone', description: 'Apple', price:'889', itemCount:0},
-    {_id:4, category: 'Grocery', name: 'Apple', description: 'Honey Crisp', price:'1.99lb', itemCount:0},
-    {_id:5, category: 'Grocery', name: 'Cheese', description: 'Sharp Cheddar', price:'8.99', itemCount:0},
-    {_id:6, category: 'Grocery', name: 'Lettuce', description: 'Butter', price:'2.99', itemCount:0},
-  ]};
+    { name: 'TV', category: 'electronics', price: 699.00, inStock: 5 },
+    { name: 'Radio', category: 'electronics', price: 99.00, inStock: 15 },
+    { name: 'Shirt', category: 'clothing', price: 9.00, inStock: 25 },
+    { name: 'Socks', category: 'clothing', price: 12.00, inStock: 10 },
+    { name: 'Apples', category: 'food', price: .99, inStock: 500 },
+    { name: 'Eggs', category: 'food', price: 1.99, inStock: 12 },
+    { name: 'Bread', category: 'food', price: 2.39, inStock: 90 },
+  ],
+  activeCategory: ''
+};
 
+export const showCategory = (category) => {
+  console.log('category', category)
+  return {
+    type: 'CATEGORIES',
+    payload: category,
+  }
+}
+
+export const category = (name) => {
+  return {
+    type: 'DISPLAY',
+    payload: name,
+  }
+}
+
+export const reset = () => {
+  return {
+    type: 'RESET'
+  }
+}
+
+const ProductListReducer = (state= initialState, action) => {
+  let { type, payload } = action;
   
-  // export const increment = (name) => {
-  //   return {
-  //     type: 'INCREMENT',
-  //     payload: name
-  //   }
-  // }
+  switch(type) {
+
+    case 'CATEGORIES':
+      console.log('payload', payload)
+      return {...state, activeCategory: payload}
+
+    // case 'CATEGORY':
+    //   let updatedProducts = state.products.map(product => {
+    //     if(product.category === payload) {
+    //       return {product}
+    //     }
+    //     return updatedProducts;
+    //   });
+    //   return {...state, products: updatedProducts}
   
-  // export const reset = () => {
-  //   return {
-  //     type: 'RESET'
-  //   }
-  // }
+    // case 'DISPLAY':
+    // let products = state.products.map(product => {
+    //   if (product.name === payload) {
+    //     return {name: product.name, description: product.description, price: product.price}
+    //   }
+    //   return product;
+    // });
+      // return {...state, products}
+    case 'RESET':
+      return initialState;
 
-  // export default (state=initialState, action) => {
-  //   let { type, payload } = action;
-  //   switch (type) {
-  //     case 'INCREMENT':
-  //       let products =
-  //   }
-  // }
+      default:
+        return state;
+  }
+}
 
-  export default initialState;
+export default ProductListReducer;

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { category, showCategory, reset } from '../../store/productStore';
 
 const ProductCategory = (props) => {
-// const ProductTotal = (name) => props.show(name)
+  
 console.log('props++++++++', props.products.categories)
   return (
     <div id='category'>

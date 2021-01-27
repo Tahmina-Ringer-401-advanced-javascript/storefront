@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
-import Categories from './components/storefront/categories';
-import ProductsComp from './components/storefront/productsComp';
+import Categories from './components/store-screens/categories';
+import ProductsComp from './components/store-screens/productsComp';
 
 
 

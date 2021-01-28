@@ -1,4 +1,4 @@
-import productStore from './productStore';
+
 
 const initialState = {
   cart: [],
@@ -12,7 +12,7 @@ export const addItem = (item) => {
   };
 };
 
-export const updateQuantity = (item) => {
+export const updateQuanity = (item) => {
   return {
     type:'UPDATE-QUANITY',
     payload: item,

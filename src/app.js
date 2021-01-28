@@ -5,10 +5,11 @@ import Categories from './components/store-screens/categories';
 import ProductsComp from './components/store-screens/productsComp';
 
 
-
 function App() {
+ 
   return (
     <div className="App">
+
       <Header /> 
       <Categories />
       <ProductsComp /> 
@@ -16,5 +17,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

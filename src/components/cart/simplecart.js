@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { changeQuanity } from '../../store/cart';
+import { updateQuanity } from '../../store/cart';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
@@ -11,7 +11,7 @@ const mapDispatchToProps = { changeQuanity };
 
 function ShoppingCart(props) {
   const updateItemQuantity = (item) => {
-    props.changeQuanity(item);
+    props.updateQuanity(item);
   }
   return (
     <Container maxWidth='md'>

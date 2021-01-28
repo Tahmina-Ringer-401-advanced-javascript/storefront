@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { category, showCategory, reset } from '../../store/productStore';
+import { category, showCategory, addItem, reset } from '../../store/productStore';
 
 const ProductCategory = (props) => {
   
@@ -29,6 +29,9 @@ const mapDispatchToProps = dispatch => ({
   showCategory: (category) => {
     dispatch(showCategory(category))
   }, 
+  addItem: (product) => {
+    dispatch(addItem(product))
+  },
   reset: () => {
     dispatch(reset()) 
   }

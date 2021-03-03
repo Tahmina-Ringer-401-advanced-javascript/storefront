@@ -6,6 +6,7 @@ import { category, showCategory, addItem, reset } from '../../store/productStore
 import Button from '@material-ui/core/Button';
 import Link from 'react-router-dom'
 import cart from '../cart/simplecart';
+import { BrowserRouter } from 'react-router-dom';
 
 const Header = (props) => {
   console.log(cart)
@@ -17,7 +18,9 @@ const Header = (props) => {
       <div id='category'>
       {props.products.products.map((product, i) => (
         <div key={i}>  
-          <Link to="/cart"><Button name={product.name} onClick={() => props.addItem(product.name)}>Shopping Cart</Button></Link> 
+          <BrowserRouter>
+            <Link to="/cart"><Button name={product.name} onClick={() => props.addItem(product.name)}>Shopping Cart</Button></Link> 
+          </BrowserRouter>
           
         </div>
       ))}
